@@ -12,15 +12,15 @@ This repository contains an Angular application that serves as a password streng
 
 - **Password Strength Indicator** 💪: The application evaluates the password strength and shows it in real-time using three sections.
 
-  - If the password is empty, all sections are displayed in gray. 🟦
+  - If the password is empty, all sections are displayed in gray. ⬜️
   - If the password is less than 8 characters, all sections are displayed in red. 🔴
-  - If the password is easy (contains only letters, digits, or symbols), the first section is red, and the rest are gray. 🔴🟦🟦
-  - If the password is medium (combination of letters-digits, letters-symbols, or digits-symbols), the first two sections are yellow, and the last one is gray. 🟨🟨🟦
+  - If the password is easy (contains only letters, digits, or symbols), the first section is red, and the rest are gray. 🔴⬜️⬜️
+  - If the password is medium (combination of letters-digits, letters-symbols, or digits-symbols), the first two sections are yellow, and the last one is gray. 🟨🟨⬜️
   - If the password is strong (contains letters, symbols, and numbers), all sections are displayed in green. 🟩🟩🟩
 
 - **Progress Bar** 📊: There is a progress bar that represents the password strength percentage. The color of the progress bar changes based on the password strength.
 
-  - If the password is empty, the progress bar is displayed in light gray. 🟦
+  - If the password is empty, the progress bar is displayed in light gray. ⬜️
   - If the password strength is less than 66%, the progress bar is displayed in red. 🔴
   - If the password strength is between 66% and 100%, the progress bar is displayed in yellow. 🟨
   - If the password strength is 100%, the progress bar is displayed in green. 🟩

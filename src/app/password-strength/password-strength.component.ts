@@ -23,6 +23,10 @@ export class PasswordStrengthComponent {
       this.passwordStrength = 0;
     }
 
+    if (this.password.length < 8) {
+      this.passwordStrength = 0;
+    }
+
     const hasLetters = /[a-zA-Z]/.test(this.password);
     const hasDigits = /\d/.test(this.password);
     const hasSymbols = /[!@#$%^&*()_+{}[\]:;<>,.?~\\/\-|=]/.test(this.password);
@@ -47,14 +51,16 @@ export class PasswordStrengthComponent {
   }
 
   getProgressBarClass() {
-    if (!this.password) {
-      return 'lightgrey-progress';
-    } else if (this.passwordStrength === 100) {
-      return 'green-progress';
-    } else if (this.passwordStrength >= 66) {
-      return 'yellow-progress';
+    if (this.password.length >= 8) {
+      if (this.passwordStrength === 100) {
+        return 'green-progress';
+      } else if (this.passwordStrength >= 66) {
+        return 'yellow-progress';
+      } else {
+        return 'red-progress';
+      }
     } else {
-      return 'red-progress';
+      return 'lightgrey-progress';
     }
   }
 }
