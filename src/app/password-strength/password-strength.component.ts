@@ -11,10 +11,6 @@ export class PasswordStrengthComponent {
   passwordStrength: number = 0;
 
   calculateStrength() {
-    // No need to perform calculations here, the strength is determined by CSS classes
-    console.log('Password:', this.password);
-    console.log('Hide Password:', this.hidePassword);
-    console.log('Password Strength:', this.passwordStrength);
     this.getPasswordStrengthPercentage();
   }
 
@@ -27,14 +23,9 @@ export class PasswordStrengthComponent {
       this.passwordStrength = 0;
     }
 
-    // Use regular expressions to check the password for letters, digits, and symbols
     const hasLetters = /[a-zA-Z]/.test(this.password);
     const hasDigits = /\d/.test(this.password);
     const hasSymbols = /[!@#$%^&*()_+{}[\]:;<>,.?~\\/\-|=]/.test(this.password);
-
-    console.log('hasLetters:', hasLetters);
-    console.log('hasDigits:', hasDigits);
-    console.log('hasSymbols:', hasSymbols);
 
     if (this.password.length >= 8) {
       // Strong password: has letters, digits, and symbols
@@ -52,16 +43,6 @@ export class PasswordStrengthComponent {
         // Easy password: only letters, digits, or symbols
         this.passwordStrength = 33;
       }
-    }
-  }
-
-  getProgressBarColor() {
-    if (this.passwordStrength === 100) {
-      return 'green';
-    } else if (this.passwordStrength >= 66) {
-      return 'yellow';
-    } else {
-      return 'red';
     }
   }
 
